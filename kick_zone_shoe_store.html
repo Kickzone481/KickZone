@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KICK ZONE | Online Shoe Store</title>
+<style>
+:root{--bg:#0b0b0d;--panel:#151519;--gold:#e8b84a;--text:#f7f7f7;--muted:#b7b7bd}
+*{box-sizing:border-box}body{margin:0;font-family:Arial,"Noto Sans Bengali",sans-serif;background:var(--bg);color:var(--text)}
+header{display:flex;align-items:center;justify-content:space-between;padding:18px 6%;border-bottom:1px solid #29292f;position:sticky;top:0;background:#0b0b0df2;backdrop-filter:blur(10px);z-index:5}
+.logo{font-weight:900;letter-spacing:2px;font-size:23px}.logo span{color:var(--gold)}nav a{color:white;text-decoration:none;margin-left:20px;font-size:14px}
+.hero{padding:70px 6% 55px;display:grid;grid-template-columns:1.1fr .9fr;gap:35px;align-items:center;background:radial-gradient(circle at 80% 30%,#332813 0,transparent 38%)}
+.eyebrow{color:var(--gold);font-weight:bold;letter-spacing:3px;font-size:12px}.hero h1{font-size:clamp(38px,6vw,70px);line-height:1.04;margin:16px 0}.hero p{color:var(--muted);line-height:1.8;max-width:480px}
+.btn{display:inline-block;border:0;border-radius:7px;padding:13px 19px;background:var(--gold);color:#17130a;font-weight:bold;text-decoration:none;cursor:pointer}.hero-art{min-height:270px;border:1px solid #4b3a1b;border-radius:20px;background:linear-gradient(135deg,#292015,#111114);display:flex;align-items:center;justify-content:center;font-size:100px}
+section{padding:45px 6%}.section-title{display:flex;justify-content:space-between;align-items:end;gap:15px;margin-bottom:22px}.section-title h2{margin:0;font-size:30px}.section-title p{color:var(--muted);margin:7px 0 0}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{background:var(--panel);border:1px solid #29292f;border-radius:14px;overflow:hidden}.shoe-img{height:200px;display:flex;align-items:center;justify-content:center;background:linear-gradient(140deg,#242428,#111114);font-size:75px}.card-body{padding:17px}.tag{font-size:11px;color:var(--gold);text-transform:uppercase;letter-spacing:1px}.card h3{margin:9px 0}.price{font-weight:bold;font-size:20px}.old{font-size:13px;color:#888;text-decoration:line-through;margin-left:7px}.card-actions{display:flex;gap:9px;margin-top:14px}.card-actions button{flex:1}
+.secondary{background:#29292f;color:white;border:1px solid #414148}.features{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.feature{padding:20px;background:var(--panel);border-radius:12px;border:1px solid #29292f}.feature b{display:block;margin:8px 0}.feature p{color:var(--muted);font-size:14px;line-height:1.6;margin-bottom:0}
+.contact{background:#171719;border-top:1px solid #303036}.contact-inner{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}.contact p{color:var(--muted);line-height:1.7}
+footer{text-align:center;padding:22px;color:#8d8d94;font-size:12px;border-top:1px solid #29292f}
+.cart-pill{background:#27231a;color:var(--gold);padding:8px 12px;border-radius:20px;font-size:13px}
+@media(max-width:760px){header{padding:15px 5%}nav a{margin-left:10px;font-size:12px}.hero{grid-template-columns:1fr;padding-top:45px}.hero-art{min-height:190px;font-size:75px}.grid{grid-template-columns:repeat(2,1fr)}.shoe-img{height:150px;font-size:60px}.features{grid-template-columns:1fr}.section-title h2{font-size:24px}}
+@media(max-width:430px){.grid{grid-template-columns:1fr}.shoe-img{height:190px}nav a:first-child{display:none}}
+</style>
+</head>
+<body>
+<header><div class="logo">KICK <span>ZONE</span></div><nav><a href="#products">জুতা</a><a href="#about">আমাদের সম্পর্কে</a><a href="#contact">যোগাযোগ</a></nav><span class="cart-pill">🛒 কার্ট: <b id="cartCount">0</b></span></header>
+<main>
+<div class="hero"><div><div class="eyebrow">STEP INTO YOUR STYLE</div><h1>তোমার স্টাইল,<br><span style="color:var(--gold)">তোমার KICK.</span></h1><p>স্নিকার্স, স্পোর্টস জুতা, ক্যাজুয়াল, স্যান্ডেল ও আরও অনেক ধরনের জুতার কালেকশন। স্নিকার্স, কনভার্স-স্টাইল, স্পোর্টস, স্যান্ডেল ও আরও নানা ধরনের জুতা। পছন্দের জুতা বেছে নাও, সাইজ জানাও—অর্ডারের জন্য সরাসরি WhatsApp-এ যোগাযোগ করো।</p><a class="btn" href="#products">জুতা দেখো ↓</a></div><div class="hero-art" aria-label="Sneaker illustration">👟</div></div>
+<section id="products"><div class="section-title"><div><h2>জনপ্রিয় কালেকশন</h2><p>তোমার পছন্দের জুতা বেছে নাও</p></div></div><div class="grid" id="productGrid"></div></section>
+<section id="about"><div class="section-title"><div><h2>কেন KICK ZONE?</h2><p>সহজে পছন্দ করো, সহজে অর্ডার করো</p></div></div><div class="features"><div class="feature">📦<b>বাংলাদেশজুড়ে ডেলিভারি</b><p>ডেলিভারি এলাকা ও চার্জ অর্ডারের আগে নিশ্চিত করে নাও।</p></div><div class="feature">👟<b>স্টাইলিশ কালেকশন</b><p>স্নিকার্স ও ক্যাজুয়াল জুতার নতুন ডিজাইন খুঁজে নাও।</p></div><div class="feature">💬<b>সহজ অর্ডার</b><p>পছন্দের জুতা ও সাইজ নির্বাচন করে WhatsApp-এ অর্ডার পাঠাও।</p></div></div></section>
+<section id="contact" class="contact"><div class="contact-inner"><div><h2>অর্ডার করতে চাও?</h2><p>WhatsApp নম্বরটি ওয়েবসাইটের কোডে নিজের ব্যবসার নম্বর দিয়ে বদলে নাও।<br>অর্ডারের আগে দাম, সাইজ ও স্টক নিশ্চিত করো।</p></div><button class="btn" onclick="contactShop()">WhatsApp-এ যোগাযোগ</button></div></section>
+</main><footer>© <span id="year"></span> KICK ZONE · Online Shoe Store · Demo website</footer>
+<script>
+const products=[
+{name:"Classic Street Sneaker",category:"স্নিকার্স",price:1490,old:1790,emoji:"👟"},
+{name:"Urban High-Top",category:"হাই-টপ জুতা",price:1890,old:2190,emoji:"🥾"},
+{name:"Sport Runner",category:"স্পোর্টস জুতা",price:1690,old:1990,emoji:"👟"},
+{name:"Canvas Casual",category:"ক্যানভাস / ক্যাজুয়াল",price:990,old:1190,emoji:"👞"},
+{name:"Premium White Sneaker",category:"প্রিমিয়াম স্নিকার্স",price:1990,old:2390,emoji:"👟"},
+{name:"Daily Comfort Shoe",category:"ক্যাজুয়াল জুতা",price:1290,old:1490,emoji:"👞"}
+];
+let cart=[];
+const fmt=n=>"৳"+n.toLocaleString("en-US");
+document.getElementById("productGrid").innerHTML=products.map((p,i)=>`<article class="card"><div class="shoe-img">${p.emoji}</div><div class="card-body"><div class="tag">${p.category}</div><h3>${p.name}</h3><div class="price">${fmt(p.price)} <span class="old">${fmt(p.old)}</span></div><div class="card-actions"><button class="btn" onclick="addCart(${i})">কার্টে রাখো</button><button class="btn secondary" onclick="orderOne(${i})">অর্ডার</button></div></div></article>`).join("");
+function addCart(i){cart.push(products[i]);document.getElementById("cartCount").textContent=cart.length;alert(products[i].name+" কার্টে যোগ হয়েছে।")}
+function orderOne(i){const p=products[i];const msg=`আসসালামু আলাইকুম, আমি ${p.name} অর্ডার করতে চাই। দাম: ${fmt(p.price)}। আমার সাইজ: __। নাম: __। ঠিকানা: __।`;openWhatsApp(msg)}
+function contactShop(){openWhatsApp("আসসালামু আলাইকুম, KICK ZONE-এর জুতা সম্পর্কে জানতে চাই।")}
+function openWhatsApp(msg){const number="8801885853480";window.open("https://wa.me/"+number+"?text="+encodeURIComponent(msg),"_blank")}
+document.getElementById("year").textContent=new Date().getFullYear();
+</script>
+</body></html>
